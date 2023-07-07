@@ -1,0 +1,16 @@
+.country_card {
+    width: 22%;
+    min-width: 200px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.country_card img {
+    width: 100%;
+}
+
+.country_info {
+    padding: 1rem;
+}
