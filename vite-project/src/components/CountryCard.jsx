@@ -1,8 +1,11 @@
 import '../stylesheets/countryCard.css'
 
-const CountryCard = ({ name, population, region, capital, flag, alt }) => {
+const CountryCard = ({ name, population, region, capital, flag, alt, onClick }) => {
     return (
-        <div className='country_card'>
+        <div
+            onClick={onClick}
+            className='country_card'>
+
             <img src={flag} alt={alt} />
             <div className="country_info">
                 <h4>{name}</h4>

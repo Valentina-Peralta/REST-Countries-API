@@ -1,9 +1,11 @@
 .country_card {
-    width: 22%;
+    width: 25%;
     min-width: 200px;
+    min-height: 280px;
     border-radius: 5px;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0;
 
 }
 
@@ -13,4 +15,11 @@
 
 .country_info {
     padding: 1rem;
+}
+
+@media screen and (max-width: 440px) {
+
+    .country_card {
+        width: 90vw;
+    }
 }
