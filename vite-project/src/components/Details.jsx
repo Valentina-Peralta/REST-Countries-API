@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import '../stylesheets/details.css'
 
-const Details = () => {
+const Details = ({ darkMode }) => {
     const params = useParams()
     console.log(params)
 
@@ -33,11 +33,11 @@ const Details = () => {
     };
     return (
 
-        <div className="country_wrapper">
+        <div className={darkMode ? "country_wrapper dark" : "country_wrapper"}>
             <Link to='/'>
                 <button
-                    className='back_btn'>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="m274-450 248 248-42 42-320-320 320-320 42 42-248 248h526v60H274Z" /></svg>
+                    className={darkMode ? 'back_btn dark' : 'back_btn'}>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="m274-450 248 248-42 42-320-320 320-320 42 42-248 248h526v60H274Z" fill={darkMode ? 'white' : null} /></svg>
                     Back</button>
             </Link>
             {country ? <><img src={country.flags.png} alt={country.flags.alt} />

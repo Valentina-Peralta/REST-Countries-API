@@ -1,10 +1,10 @@
 import '../stylesheets/countryCard.css'
 
-const CountryCard = ({ name, population, region, capital, flag, alt, onClick }) => {
+const CountryCard = ({ darkMode, name, population, region, capital, flag, alt, onClick }) => {
     return (
         <div
             onClick={onClick}
-            className='country_card'>
+            className={darkMode ? 'country_card dark' : 'country_card'}>
 
             <img src={flag} alt={alt} />
             <div className="country_info">

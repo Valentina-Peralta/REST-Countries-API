@@ -3,7 +3,7 @@ import CountryCard from './CountryCard';
 import '../stylesheets/home.css'
 import { Link } from 'react-router-dom';
 
-const Home = () => {
+const Home = ({ darkMode }) => {
     const [countries, setCountries] = useState([]);
     const [filteredCountries, setFilteredCountries] = useState([])
 
@@ -11,6 +11,8 @@ const Home = () => {
         fetchData();
 
     }, []);
+
+    useEffect(() => console.log(darkMode), [darkMode])
 
     useEffect(() => {
         console.log(countries[0]);
@@ -38,7 +40,7 @@ const Home = () => {
     }, [selectedCountry])
     return <div>
 
-        <main>
+        <main className={darkMode ? 'dark_bg' : null}>
             <nav>
                 <form
                     onSubmit={() => {
@@ -48,11 +50,12 @@ const Home = () => {
                     <input
                         value={selectedCountry}
                         onChange={(e) => setSelectedCountry(e.target.value)}
-                        className='search_input'
+                        className={darkMode ? 'search_input dark' : 'search_input'}
                         type="text"
                         placeholder='Search for a country...' />
                     <select
                         id="regionFilter"
+                        className={darkMode ? 'dark' : null}
                         value={selectedRegion}
                         onChange={(e) => setSelectedRegion(e.target.value)}>
                         <option disabled selected hidden value="">Filter by Region</option>
@@ -72,6 +75,7 @@ const Home = () => {
 
                     >
                         <CountryCard
+                            darkMode={darkMode}
                             name={country.name.common}
                             population={country.population}
                             capital={country.capital}

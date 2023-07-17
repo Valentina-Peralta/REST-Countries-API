@@ -8,10 +8,22 @@ main {
     gap: 1rem;
 }
 
+.dark_bg {
+    background-color: hsl(207, 26%, 17%);
+    color: white;
+}
+
+.dark {
+    background-color:
+        hsl(209, 23%, 22%);
+    color: white;
+
+}
+
 form {
     display: flex;
     justify-content: space-between;
-    width: 100vw;
+    width: 90vw;
 }
 
 .countries_wrapper {
